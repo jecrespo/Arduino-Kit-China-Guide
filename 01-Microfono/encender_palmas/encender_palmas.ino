@@ -40,6 +40,7 @@ void  loop() {
       }
 
       if (palmas == 2) {
+        Serial.println("segunda palmada");
         estado_led = !estado_led;
         Serial.print("Tiempo entre palmas: ");
         Serial.print(millis() - tiempo_palmas);
@@ -50,7 +51,7 @@ void  loop() {
     }
   }
   if ((palmas == 1) && ((millis() - tiempo_palmas) > 2000 )) {  //Si han pasado 2 segundo sin que venga una segunda palma reinicio
-    Serial.println("palmada demasiado larga");
+    Serial.println("demasiado tiempo de espera");
     palmas = 0;
   }
   ant_val = val;
